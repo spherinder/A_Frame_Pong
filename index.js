@@ -139,7 +139,6 @@ function gameLoop() {
                 ballPos.x + BALL_RADIUS > p2Pos.x - PADDLE_WIDTH / 2
             ) {
                 bounceAngle = (((p2Pos.x - ballPos.x) / PADDLE_WIDTH) + 1/2) * Math.PI;
-                console.log(bounceAngle);
                 ballSpeed = {
                     x: Math.cos(bounceAngle) * BALL_SPEED,
                     z: -Math.sin(bounceAngle) * BALL_SPEED
