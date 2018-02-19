@@ -14,6 +14,7 @@ let p2;
 let cam;
 let ball;
 let table;
+let ground;
 window.onload = () => {
     p1 = document.getElementById("paddle1");
     p2 = document.getElementById("paddle2");
