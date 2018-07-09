@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-  <script type="text/javascript" src="index.js"></script>
-</head>
-<body>
-  <a-scene>
+  <head>
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="index.js"></script>
+  </head>
+  <body>
+  <a-scene pong>
     <a-assets>
+        <img id="skyTexture" src="https://ucarecdn.com/f7ee63c5-eccc-4562-9bdc-acbc720236b4/">
+        <img id="groundTexture" src="https://ucarecdn.com/15c2c5a6-000a-47ec-bb4a-985a7beb6b6d/">
+        <img id="boardTexture" src="https://ucarecdn.com/718cb32b-9684-4bbd-b477-f5f228924630/">
     </a-assets>
 
-    <a-sky color="cyan"></a-sky>
-    <a-box id="paddle1" color="blue"></a-box>
-    <a-box id="paddle2" color="blue"></a-box>
-    <a-sphere id="ball" color="grey"></a-sphere>
-    <a-plane id="table" color="orange" rotation="-90 0 0"></a-plane>
-    <a-plane id="ground" color="#456" rotation="-90 0 0" height="100" width="100"></a-plane>
-
+    <a-sky src="#skyTexture", repeat="2 2"></a-sky>
+    <a-box color="#00BFFF" id="paddle2"></a-box>
+    <a-box color="#00BFFF" id="paddle1"></a-box>
+    <a-sphere id="ball" color="#00BFFF" light="type: point; color: #00BFFF; intensity: 5; decay: 15; distance: 100"></a-sphere>
+    <a-plane src="#boardTexture" id="table" rotation="-90 0 0" roughness="10"></a-plane>
+    <a-circle 
+      id="ground"
+      src="#groundTexture"
+      rotation="-90 0 0"
+      radius="100"
+      roughness="10"
+      repeat="0.75 1.5"
+      offset="0.125 -0.25"
+    ></a-circle>
+    
+    <a-light type="ambient" color="#fff"></a-light>
     <a-camera id="camera" rotation="0 180 0"></a-camera>
 
   </a-scene>
-</body>
+  </body>
 </html>
